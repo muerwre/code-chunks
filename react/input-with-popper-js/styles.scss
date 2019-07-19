@@ -1,0 +1,37 @@
+.wrap {
+  position: relative;
+}
+
+@keyframes fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.popper {
+  //height: 200px;
+  background: white;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  //max-height: calc(50vh - 10px);
+  border-radius: $radius;
+  box-shadow: $input_shadow, $card_hovered_shadow;
+  //padding: $input_height 1px 1px 1px;
+  padding: 1px;
+  box-sizing: border-box;
+  //pointer-events: none;
+  //touch-action: none;
+  animation: fade 0.5s forwards;
+
+  .content {
+    pointer-events: all;
+    touch-action: initial;
+    //background: $white;
+    //border-radius: 0 0 $radius $radius;
+    //border-radius: $radius;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+}
