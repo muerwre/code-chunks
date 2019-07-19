@@ -1,0 +1,28 @@
+{
+  "allowSyntheticDefaultImports": true,
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
+    "removeComments": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "target": "es2018",
+    "isolatedModules": true,
+    "jsx": "react",
+    "lib": [ "es2015", "DOM", "es6" ],
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    }
+  },
+  "include": [
+    "./src/**/*",
+    "./custom.d.ts"
+  ],
+  "exclude": [
+    "./__tests__/**/*"
+  ]
+}
