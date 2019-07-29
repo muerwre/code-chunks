@@ -1,5 +1,4 @@
 // Runs saga on RUN_SAGA, but kills it on CANCEL_ALL
-
 import { call, race, take, takeLatest, fork } from 'redux-saga/effects';
 
 export function* sagaKiller(saga, actions, killer) {
