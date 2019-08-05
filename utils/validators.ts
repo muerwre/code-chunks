@@ -55,4 +55,8 @@ export const customerSubscriptionValidator = map(
     reject(isNil),
   ),
 );
+
+const validation_errors = customerSubscriptionValidator(data);
+const has_errors = validation_errors.some(hasNonEmptyFields));
+
 */
