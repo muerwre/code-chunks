@@ -1,0 +1,62 @@
+{
+  "git.enableSmartCommit": true,
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "workbench.colorTheme": "Atom One Dark",
+  "macros": {
+    "commentLine": ["editor.action.commentLine", "cursorDown"]
+  },
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "editor.gotoLocation.multiple": "goto",
+  "workbench.startupEditor": "newUntitledFile",
+  "eslint.options": {
+    "configFile": "./.eslintrc.js",
+    "extensions": [".js", ".ts", ".tsx", ".jsx"]
+  },
+  "editor.minimap.enabled": false,
+  "prettier.tslintIntegration": false,
+  "prettier.printWidth": 100,
+  "sync.gist": "b947ba631ffd4d604ddf45fe90c1ee92",
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "eslint.alwaysShowStatus": true,
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "editor.tabSize": 2,
+  "eslint.provideLintTask": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[jsonc]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveTimeout": 750,
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveTimeout": 750,
+    "editor.defaultFormatter": "vscode.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveTimeout": 750,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.activityBar.visible": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "prettier.eslintIntegration": true,
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.wordWrapColumn": 120,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "editor.largeFileOptimizations": false,
+  "terminal.integrated.rendererType": "dom",
+  "sync.forceUpload": true,
+  "eslint.enable": true,
+  "editor.rulers": [100],
+  "editor.formatOnSaveTimeout": 750,
+}

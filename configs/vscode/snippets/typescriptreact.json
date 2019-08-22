@@ -1,0 +1,29 @@
+{
+  "Functional Component": {
+    "prefix": "rfc",
+    "body": [
+      "import React, { FC } from 'react';",
+      "",
+      "interface IProps {};",
+      "",
+      "const ${TM_DIRECTORY/^.+\\/(.*)$/$1/}: FC<IProps> = ({",
+      "}) => (",
+      "\t<div />",
+      ")",
+      "",
+      "export { ${TM_DIRECTORY/^.+\\/(.*)$/$1/} };"
+    ]
+  },
+  "Import styles": {
+    "prefix": "is",
+    "body": ["import * as styles from './styles.scss';"]
+  },
+  "mapStateToProps": {
+    "prefix": "mss",
+    "body": ["const mapStateToProps = () => ({});"]
+  },
+  "mapDispatchToProps": {
+    "prefix": "mdtp",
+    "body": ["const mapDispatchToProps = {};"]
+  }
+}
