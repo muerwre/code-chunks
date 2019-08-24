@@ -16,7 +16,7 @@
   "editor.minimap.enabled": false,
   "prettier.tslintIntegration": false,
   "prettier.printWidth": 100,
-  "sync.gist": "b947ba631ffd4d604ddf45fe90c1ee92",
+  "sync.gist": "",
   "prettier.singleQuote": true,
   "prettier.trailingComma": "es5",
   "eslint.alwaysShowStatus": true,
