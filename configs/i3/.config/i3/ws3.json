@@ -1,0 +1,29 @@
+{
+    "layout": "splith",
+    "percent": 0.4,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "none",
+            "name": "Slack",
+            "percent": 0.7,
+            "type": "con",
+            "swallows": [
+                {
+                    "class": "^Slack$"
+                }
+            ]
+        },
+        {
+            "border": "none",
+            "name": "telegram",
+            "percent": 0.3,
+            "type": "con",
+            "swallows": [
+                {
+                    "class": "^TelegramDesktop$"
+                }
+            ]
+        }
+    ]
+}

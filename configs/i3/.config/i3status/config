@@ -1,0 +1,41 @@
+general {
+  output_format = "i3bar"
+  separator = "         "
+  color_bad = "#FF3366"
+}
+
+order += "disk /"
+order += "wireless wlo1"
+order += "battery 0"
+order += "time"
+
+load {
+  format = "[ load: %1min, %5min, %15min ]"
+}
+
+disk "/" {
+  format = "  %avail"
+  separator_block_width = 30
+}
+
+battery 0 {
+  format = "  %status  %percentage"
+  format_down = "No battery"
+  status_chr = "  "
+  status_bat = ""
+  status_unk = ""
+  status_full = ""
+  path = "/sys/class/power_supply/BAT%d/uevent"
+  separator_block_width = 30
+  low_threshold = 10
+}
+
+wireless wlo1 {
+  format_up = "  %essid"
+  format_down = " x"
+  separator_block_width = 30
+}
+
+time {
+  format = "%H:%M"
+}
