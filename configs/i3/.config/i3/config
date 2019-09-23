@@ -170,7 +170,7 @@ for_window [instance="gthumb"] floating enable border pixel 15
 # Assign workspaces to apps
 assign [class="Google-chrome"] $ws1
 assign [class="Slack"] $ws3
-assign [class="Tilix"] $ws4
+assign [class="URxvt"] $ws4
 assign [class="Gnome-terminal"] $ws4
 assign [class="eu.tiliado.NuvolaAppYandexMusic"] $ws4
 assign [class="code-oss"] $ws2
@@ -300,5 +300,6 @@ exec --no-startup-id telegram-desktop
 exec --no-startup-id slack
 exec --no-startup-id redshift-gtk
 exec --no-startup-id i3-msg 'workspace 1; exec google-chrome;'
+exec --no-startup-id nitrogen --restore
 
 bindsym --release Caps_Lock exec --no-startup-id pkill -RTMIN+8 i3blocks
