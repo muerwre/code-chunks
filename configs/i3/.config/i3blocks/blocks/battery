@@ -1,0 +1,83 @@
+#!/usr/bin/env python3
+
+import re
+from subprocess import check_output
+
+status = check_output(['acpi'], universal_newlines=True)
+
+if not status:
+    # stands for no battery found
+    fulltext = "<span color='red'><span font='FontAwesome'>\uf00d \uf240</span></span>"
+    percentleft = 100
+else:
+    # if there is more than one battery in one laptop, the percentage left is
+    # available for each battery separately, although state and remaining
+    # time for overall block is shown in the status of the first battery
+    batteries = status.split("\n")
+    state_batteries = []
+    commasplitstatus_batteries = []
+    percentleft_batteries = []
+    time = ""
+    for battery in batteries:
+        if battery != '':
+            state_batteries.append(battery.split(": ")[1].split(", ")[0])
+            commasplitstatus = battery.split(", ")
+            if not time:
+                time = commasplitstatus[-1].strip()
+                # check if it matches a time
+                time = re.match(r"(\d+):(\d+)", time)
+                if time:
+                    time = ":".join(time.groups())
+                    timeleft = " ({})".format(time)
+                else:
+                    timeleft = ""
+
+            p = int(commasplitstatus[1].rstrip("%\n"))
+            if p > 0:
+                percentleft_batteries.append(p)
+            commasplitstatus_batteries.append(commasplitstatus)
+    state = state_batteries[0]
+    commasplitstatus = commasplitstatus_batteries[0]
+    if percentleft_batteries:
+        percentleft = int(sum(percentleft_batteries) /
+                          len(percentleft_batteries))
+    else:
+        percentleft = 0
+
+    fulltext = ""
+
+    def charged(state, percentLeft):
+        if state == "Discharging":
+            if percentLeft < 20:
+                return ""
+            if percentLeft < 40:
+                return ""
+            if percentLeft < 60:
+                return ""
+            if percentLeft < 80:
+                return ""
+            return ""
+        elif state == "Full":
+            return ""
+        elif state == "Unknown":
+            return ""
+        else:
+            return "\uf0e7"
+
+    def color(percent):
+        if percent < 10:
+            return "#FF3344"
+        if percent < 20:
+            return "#FF3344"
+        if percent < 30:
+            return "#FF6644"
+        if percent < 40:
+            return "#FF3344"
+        
+        return "#777777"
+
+    form = '<span color="{}">{}  {}%</span>'
+    fulltext += form.format(color(percentleft), charged(state, percentleft), percentleft)
+
+print(fulltext)
+print(fulltext)
