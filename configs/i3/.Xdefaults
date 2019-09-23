@@ -12,7 +12,7 @@ URxvt.boldFont: xft:DejaVu Sans Mono for Powerline:pixelsize=16
 URxvt.letterSpace: 0
 
 *antialias:  true
-*autohint:   true
+*autohint:   false
 
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: google-chrome
@@ -51,4 +51,4 @@ URxvt.internalBorder:  32
 *.color15:     #fdf6e3
 
 URxvt*depth: 32
-URxvt.background: [60]#232729
+URxvt.background: [90]#232729
