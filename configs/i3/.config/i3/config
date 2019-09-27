@@ -131,7 +131,7 @@ set $ws1 "1 • "
 set $ws2 "2 • "
 set $ws3 "3 • "
 set $ws4 "4 • "
-set $ws5 "5"
+set $ws5 "5 • "
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -163,9 +163,10 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Always floating
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 1
 for_window [instance="urxvtconfig"] border pixel 15
 for_window [instance="gthumb"] floating enable border pixel 15
+for_window [class="Yad"] floating enable border pixel 15
 for_window [floating] border normal 20
 
 # Assign workspaces to apps
@@ -173,12 +174,12 @@ assign [class="Google-chrome"] $ws1
 assign [class="Slack"] $ws3
 assign [class="URxvt"] $ws4
 assign [class="Gnome-terminal"] $ws4
-assign [class="eu.tiliado.NuvolaAppYandexMusic"] $ws4
+assign [class="eu.tiliado.NuvolaAppYandexMusic"] $ws5
 assign [class="code-oss"] $ws2
 assign [class="TelegramDesktop"] $ws3
 
 # Startups
-# exec --no-startup-id i3-msg 'workspace 2; exec code; workspace 3; exec slack; workspace 3; exec telegram-desktop; resize shrink width 100 px or 100 ppt" workspace 4; exec i3-sensible-terminal; workspace 1; exec google-chrome-beta'
+# exec --no-startup-id i3-msg 'workspace 2; exec code; workspace "5 • "; exec slack; workspace 3; exec telegram-desktop; resize shrink width 100 px or 100 ppt" workspace 4; exec i3-sensible-terminal; workspace 1; exec google-chrome-beta'
 # exec --no-startup-id telegram-desktop
 # exec --no-startup-id slack
 exec --no-startup-id code
@@ -265,8 +266,9 @@ exec libinput-gestures-setup start
 # exec xsetroot -solid "#ff3344"
 
 # Locker and etc
-# set $Locker i3lock -c 222222 && sleep 1
-set $Locker i3lock -c 222222 && sleep 1
+# set $Locker i3lock -f & sleep 5 && xset dpms force off
+#set $Locker i3lock -f -u -r 10000 -c 222222 & sleep 5 && xset dpms force off
+set $Locker /home/muerwre/.config/i3/locker.sh
 
 set $mode_system   L - lock    E - logout    S - suspend    R - reboot   SHIFT+S - shutdown
 mode "$mode_system" {
@@ -290,22 +292,22 @@ exec_always --no-startup-id hsetroot -solid "#423996"
 
 # DarkGrey background with white text - not focus grey background - black text
 # Windows decoration colors
-# class                 border  backgr. text    indicator
+# class                   border  backgr  text    indicator
 # client.placeholder      #ff0000 #ff0000 #ff0000
 # client.background       #ff0000 #ff0000 #ff0000
-client.focused          #ff3344 #ff3344 #ff3344 #ff0000
-client.unfocused          #222222 #222222 #222222 #ff0000
-client.focused_inactive          #222222 #222222 #222222 #ff0000
+client.focused            #444444 #555555 #ff3344 #ff0000
+client.unfocused          #222222 #444444 #222222 #ff0000
+client.focused_inactive   #444444 #444444 #222222 #ff0000
 # client.unfocused        #ff0000 #ff0000 #ff0000 #ff0000
 # client.focused_inactive #ff0000 #ff0000 #ff0000 #ff0000
 # client.urgent           #ff0000 #ff0000 #ff0000 #ff0000
 
 exec --no-startup-id bash ~/.config/i3/no-urgent.sh
-exec --no-startup-id i3-msg 'workspace 3; append_layout /home/muerwre/.config/i3/ws3.json'
+exec --no-startup-id i3-msg 'workspace $ws3; append_layout /home/muerwre/.config/i3/ws3.json'
 exec --no-startup-id telegram-desktop
 exec --no-startup-id slack
 exec --no-startup-id redshift-gtk
-exec --no-startup-id i3-msg 'workspace 1; exec google-chrome;'
+exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome;'
 exec_always --no-startup-id nitrogen --restore
 
 bindsym --release Caps_Lock exec --no-startup-id pkill -RTMIN+8 i3blocks

@@ -1,8 +1,2 @@
 #!/bin/bash 
 xkb-switch | sed 's/ru$/<span color="#ff3344" weight="bold">  RU<\/span>/; s/us$/<span weight="bold">  US<\/span>/'
-# xkb-switch -W | sed 's/ru$/<span color="#ff3344">RU<\/span>/; s/us$/<span color="#5dde21">US<\/span>/'
-
-# bash -c "xkb-switch; xkb-switch -W"
-#sed 's/ru$/RU/' <<< xkb-switch -W
-#
-# stdbuf -oL <<< xkb-switch -W
