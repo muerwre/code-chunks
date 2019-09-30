@@ -1,6 +1,7 @@
 ##### THIS FILE IS BEING CURRENTLY MANAGED BY URXVTCONFIG #####
 ##### CHANGES DONE TO THIS FILE MANUALLY MAY AFFECT THE FUNCTIONALITY ######
 ##### PROCEED WITH CAUTION! #####
+Xcursor.size: 32
 
 URxvt*scrollBar:         false
 URxvt*scrollBar_right:   false

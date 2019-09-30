@@ -1,0 +1,1 @@
+lscpu | grep 'CPU MHz' | sed 's/^CPU MHz\W*//; s/....$/ MHz/; s/^/{ "text": "/; s/$/" }/'

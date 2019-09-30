@@ -10,6 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+# focus_follows_mouse no
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -49,7 +50,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightne
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+grave exec i3-sensible-terminal
+
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -63,6 +66,7 @@ bindsym Alt+F4 kill
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+x exec rofi -show drun
 bindsym $mod+d exec rofi -show run
+bindsym $mod+Return exec rofi -show drun
 
 # change focus
 bindsym $mod+j focus left
@@ -121,7 +125,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # screenshots
-bindsym --release Print exec gnome-screenshot -wb
+bindsym --release Print exec gnome-screenshot -a
 bindsym --release $mod+Shift+Print exec gnome-screenshot -ac
 bindsym --release $mod+Ctrl+Shift+Print exec gnome-screenshot -a
 
@@ -163,7 +167,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Always floating
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 4
 for_window [instance="urxvtconfig"] border pixel 15
 for_window [instance="gthumb"] floating enable border pixel 15
 for_window [class="Yad"] floating enable border pixel 15
@@ -295,8 +299,8 @@ exec_always --no-startup-id hsetroot -solid "#423996"
 # class                   border  backgr  text    indicator
 # client.placeholder      #ff0000 #ff0000 #ff0000
 # client.background       #ff0000 #ff0000 #ff0000
-client.focused            #444444 #555555 #ff3344 #ff0000
-client.unfocused          #222222 #444444 #222222 #ff0000
+client.focused            #444444 #334c49 #ffffff #ff0000
+client.unfocused          #222222 #222222 #777777 #ff0000
 client.focused_inactive   #444444 #444444 #222222 #ff0000
 # client.unfocused        #ff0000 #ff0000 #ff0000 #ff0000
 # client.focused_inactive #ff0000 #ff0000 #ff0000 #ff0000
