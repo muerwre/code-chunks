@@ -2,17 +2,16 @@
     border: none;
     border-radius: 0;
     font-family: DejaVu Sans Mono, Font Awesome;
-    font-size: 19px;
     min-height: 0;
     font-weight: 500;
 }
 
 window#waybar {
-    background-color: rgba(40, 40, 40, 0.8);
+    background-color: rgba(55, 40, 60, 0.8);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    /* border-top: 1px solid rgba(255,255,255,0.05); */
 }
 
 window#waybar.hidden {
@@ -21,17 +20,24 @@ window#waybar.hidden {
 
 #window {
     color: rgba(255,255,255,0.4);
-    font-size: 16px;
+    font-size: 15px;
     padding-left: 15px;
 }
 
-#workspaces button {
-    padding: 0 10px;
-    color: #ffffff;
-    border-bottom: 3px solid transparent;
+#workspaces {
+    padding-left: 5px;
+    padding-right: 10px;
+    border-right: 1px solid #333333;
+    background-color: rgba(200,255,200,0.05);
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button {
+    padding: 0 5px;
+    color: #ffffff;
+    border-bottom: 3px solid transparent;
+    font-size: 17px;
+}
+
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
     box-shadow: inherit;
@@ -59,21 +65,29 @@ window#waybar.hidden {
 #mode,
 #idle_inhibitor,
 #custom-cpu {
+    font-size: 17px;
     padding: 0;
     margin: 0;
     color: rgba(255,255,255,0.4);
 }
 
 #mode {
-    background-color: #3ed6cf;
+    background-color: #fcda2d;
     padding: 0 10px;
     color: black;
     border-radius: 4px;
+    margin: 10px 0 10px 10px;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 #clock {
     color: white;
     font-weight: bold;
+    font-size: 20px;
+    background-color: rgba(255,255,255,0.05);
+    padding: 0 20px;
+    margin-left: 10px;
 }
 
 #battery {
@@ -81,6 +95,14 @@ window#waybar.hidden {
 
 #battery.charging {
     color: #ffffff;
+}
+
+#battery.warning {
+    color: orange;
+}
+
+#battery.critical {
+    color: #ff3344;
 }
 
 @keyframes blink {
@@ -107,6 +129,14 @@ label:focus {
 }
 
 #memory {
+}
+
+#memory.critical {
+    background: #ff3344;
+}
+
+#memory.warning {
+    color: orange;
 }
 
 #backlight {
@@ -149,6 +179,7 @@ label:focus {
 
 #tray {
     padding-right: 10px;
+    background-color: rgba(255,255,255,0.05);
 }
 
 #idle_inhibitor {
@@ -179,17 +210,18 @@ label:focus {
 
 #custom-layout {
     padding: 0 10px 0 0;
-    font-size: 20px;
     margin: 5px 0 5px;
-    font-weight: bold;
     color: #999999;
+    border-radius: 4px;
+    font-size: 18px;
 }
 
 #custom-layout.warn {
-    background-color: #ff5563;
-    border-radius: 4px;
+    background-color: #ff3344;
     color: white;
+    color: #222222;
 }
+
 
 #custom-separator {
     color: #444444;
@@ -197,3 +229,9 @@ label:focus {
 }
 
 #custom-cpu {}
+
+#custom-player {
+    font-size: 15px;
+    color: #777777;
+    margin-left: 40px;
+}
