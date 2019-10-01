@@ -72,7 +72,7 @@ window#waybar.hidden {
 }
 
 #mode {
-    background-color: #fcda2d;
+    background-color: orange;
     padding: 0 10px;
     color: black;
     border-radius: 4px;
