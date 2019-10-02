@@ -1,7 +1,22 @@
+@keyframes glow {
+    0% {
+        background-color: rgba(55,40,60,0.8);
+    }
+    25% {
+        background-color: rgba(40,60,55,0.8);
+    }
+    50% {
+        background-color: rgba(60,40,40,0.8);
+    }
+    100% {
+        background-color: rgba(55,40,60,0.8);
+    }
+}
+
 * {
     border: none;
     border-radius: 0;
-    font-family: DejaVu Sans Mono, Font Awesome;
+    font-family: DejaVu Sans Mono for Powerline, Font Awesome;
     min-height: 0;
     font-weight: 500;
 }
@@ -11,6 +26,12 @@ window#waybar {
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
+
+    animation-name: glow;
+    animation-duration: 360s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    /* animation-direction: alternate; */
     /* border-top: 1px solid rgba(255,255,255,0.05); */
 }
 
