@@ -1,12 +1,12 @@
 @keyframes glow {
     0% {
-        background-color: rgba(55,40,60,0.8);
+        background-color: rgba(65,40,80,0.8);
     }
     25% {
         background-color: rgba(40,60,55,0.8);
     }
     50% {
-        background-color: rgba(60,40,40,0.8);
+        background-color: rgba(20,80,70,0.8);
     }
     100% {
         background-color: rgba(55,40,60,0.8);
@@ -28,7 +28,7 @@ window#waybar {
     transition-duration: .5s;
 
     animation-name: glow;
-    animation-duration: 360s;
+    animation-duration: 60s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     /* animation-direction: alternate; */
