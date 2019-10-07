@@ -22,15 +22,18 @@
 }
 
 window#waybar {
-    background-color: rgba(55, 40, 60, 0.8);
+    background-color: rgba(55, 40, 70, 0.8);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
 
+/*
     animation-name: glow;
-    animation-duration: 60s;
+    animation-duration: 240s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    animation-timing-function: steps(4, end);
+*/    
     /* animation-direction: alternate; */
     /* border-top: 1px solid rgba(255,255,255,0.05); */
 }
@@ -114,9 +117,6 @@ window#waybar.hidden {
 #battery {
 }
 
-#battery.charging {
-    color: #ffffff;
-}
 
 #battery.warning {
     color: orange;
@@ -140,6 +140,10 @@ window#waybar.hidden {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+#battery.charging {
+    color: #009988;
 }
 
 label:focus {
@@ -230,7 +234,7 @@ label:focus {
 }
 
 #custom-layout {
-    padding: 0 10px 0 0;
+    padding: 0 10px;
     margin: 5px 0 5px;
     color: #999999;
     border-radius: 4px;

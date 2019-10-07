@@ -4,7 +4,7 @@
     "height": 40, // Waybar height (to be removed for auto height)
     // "width": 30, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     // q"modules-center": [],
     "modules-right": [ 
 	"custom/player",
@@ -70,7 +70,7 @@
             "critical": 15
         },
         "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
+        "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
@@ -97,7 +97,7 @@
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
-            "headphones": "",
+            "headphones": "",
             "handsfree": "",
             "headset": "",
             "phone": "",
@@ -108,7 +108,7 @@
         // "on-click": "pavucontrol"
     },
     "custom/layout": {
-        "format": "{icon} {}",
+        "format": "{}",
         "escape": true,
         "exec": "$HOME/.config/i3blocks/blocks/key_layout_json",
         "return-type": "json",
