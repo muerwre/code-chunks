@@ -9,6 +9,8 @@
     "modules-right": [ 
 	"custom/player",
 	"custom/separator", 
+	"custom/cpu",
+	"custom/separator", 
         "memory", 
         "custom/separator", 
         "pulseaudio", 
@@ -27,13 +29,13 @@
          "all-outputs": true,
          "format": "{icon}",
          "format-icons": {
-             "1": "",
-             "2": "",
-             "3": "",
-             "4": "",
-             "5": "",
-             // "urgent": "-",
-             "focused": "●",
+             "4": "",
+             "1": "",
+             "2": "",
+             "5": "",
+             "3": "",
+             //"urgent": "-",
+             // "focused": "●",
              "default": "○"
          }
     },
@@ -58,8 +60,8 @@
         "format": "{used:0.1f}G",
         "tooltip": false,
 	"states": {
-	    "ok": 49,
-    	    "warning": 50,
+	    "ok": 59,
+    	    "warning": 60,
     	    "critical": 80
 	}
     },
@@ -104,8 +106,8 @@
             "portable": "",
             "car": "",
             "default": ["", "", ""]
-        }
-        // "on-click": "pavucontrol"
+        },
+        "on-click": "pavucontrol"
     },
     "custom/layout": {
         "format": "{}",
@@ -120,7 +122,7 @@
         "escape": true,
         "exec": "$HOME/.config/i3blocks/blocks/cpu_json",
         "return-type": "json",
-        "interval": 2
+        "interval": 5
     },
     "custom/player": {
 	"format": "{icon} {}",

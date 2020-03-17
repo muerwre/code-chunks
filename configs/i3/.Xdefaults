@@ -8,7 +8,7 @@ URxvt*scrollBar_right:   false
 
 URxvt*transparent:       false
 
-!URxvt.font: xft:Knack Nerd Font:pixelsize=15
+!URxvt.font: xft:Knack Nerd Font:pixelsize=13
 !URxvt.boldFont: xft:DejaVu Sans Mono for Powerline:pixelsize=15
 URxvt.font: xft:RobotoMono Nerd Font:pixelsize=16
 URxvt.boldFont: xft:RobotoMono Nerd Font:pixelsize=16

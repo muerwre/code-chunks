@@ -1,8 +1,7 @@
 rofi.run-shell-command: gksu {cmd}
 rofi.location: 0
-rofi.padding: 15
+rofi.padding: 0
 rofi.modi: window,run,ssh,drun
-! rofi.lines: 12
 rofi.show-icons
 rofi.line-padding: 12
 rofi.separator-style: none
@@ -12,14 +11,11 @@ rofi.combi-mode: run,ssh
 ! rofi.color-active: #222222, #b1b4b3, #222222
 ! rofi.color-urgent: #222222, #b1b4b3, #222222, #77003d, #b1b4b3
 
-rofi.color-window: #222222, #222222, #ff2222
-rofi.color-normal: #222222, #b1b4b3, #222222, #ff3344, #222222
-rofi.color-active: #ff3344, #ff3344, #ff3344, #ff3344, #ff3344
-rofi.color-urgent: #ff3344, #ff3344, #222222, #77003d, #b1b4b3
-
-rofi.columns: 2
-
-! -width 100 -lines 2 -line-margin 0 -line-padding 1 -separator-style none
-! -font "mono 10" -columns 9 -bw 0 -disable-history 
-! -hide-scrollbar 
-! -color-window "#222222, #222222, #b1b4b3" -color-normal "#222222, #b1b4b3, #222222, #005577, #b1b4b3" -color-active "#222222, #b1b4b3, #222222, #007763, #b1b4b3" -color-urgent "#222222, #b1b4b3, #222222, #77003d, #b1b4b3" -kb-row-select "Tab" -kb-row-tab ""
+rofi.color-window: #222222, #22222200, #ff222233
+rofi.color-normal: transparent, #ffffff, transparent, #ff3344, #222222
+rofi.color-active: transparent, #ffffff, #ff00ff, #ff3344, #222222
+rofi.color-urgent: #999999, #999999, #222222, #77003d, #b1b4b3
+rofi.hide-scrollbar: true
+rofi.columns: 1
+rofi.lines: 10
+rofi.width: 20

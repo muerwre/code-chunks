@@ -1,1 +1,1 @@
-playerctl metadata --format "{ \"text\": \"-{{ status }}- {{ artist }}: {{ title }}\" }" -Fa | sed -u 's/-Playing-//; s/-Paused-//'
+playerctl metadata --format "{ \"text\": \"{{ artist }}: {{ title }}\", \"full_text\": \"{{ artist }} - {{ title }}\" }" -Fa 2> /dev/null | sed -u 's/-Playing-//; s/-Paused-//'

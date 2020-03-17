@@ -8,6 +8,9 @@
     50% {
         background-color: rgba(20,80,70,0.8);
     }
+    75% {
+        background-color: rgba(95,40,60,0.8);
+    }
     100% {
         background-color: rgba(55,40,60,0.8);
     }
@@ -22,20 +25,21 @@
 }
 
 window#waybar {
-    background-color: rgba(55, 40, 70, 0.8);
+    background-color: #372846b3;
+    /* background: linear-gradient(90deg, rgba(55, 40, 70, 0.9), rgba(95, 40, 90, 0.9)); */
     color: #ffffff;
+    /*
     transition-property: background-color;
     transition-duration: .5s;
-
-/*
     animation-name: glow;
-    animation-duration: 240s;
+    animation-duration: 20s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    animation-timing-function: steps(4, end);
-*/    
-    /* animation-direction: alternate; */
-    /* border-top: 1px solid rgba(255,255,255,0.05); */
+    animation-timing-function: steps(24, end);
+    animation-direction: alternate;
+    */
+    /*
+    border-top: 1px solid rgba(255,255,255,0.05); */
 }
 
 window#waybar.hidden {
@@ -57,24 +61,23 @@ window#waybar.hidden {
 
 #workspaces button {
     padding: 0 5px;
-    color: #ffffff;
+    color: rgba(255,255,255,0.3);
     border-bottom: 3px solid transparent;
-    font-size: 17px;
-}
-
-#workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: inherit;
+    font-size: 20px;
+    margin: 0 5px;
 }
 
 #workspaces button.focused {
-    border-radius: 20px;
+    color: #ffffff;
+}
+
+#workspaces button:hover {
+    color: #ffffff;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    color: #ff3344;
 }
-
 
 #clock,
 #battery,
@@ -107,8 +110,8 @@ window#waybar.hidden {
 
 #clock {
     color: white;
-    font-weight: bold;
-    font-size: 20px;
+    font-weight: 900;
+    font-size: 24px;
     background-color: rgba(255,255,255,0.05);
     padding: 0 20px;
     margin-left: 10px;
@@ -157,7 +160,7 @@ label:focus {
 }
 
 #memory.critical {
-    background: #ff3344;
+    color: #ff3344;
 }
 
 #memory.warning {

@@ -30,12 +30,19 @@ SCRIPT_DIR = /home/muerwre/.config/i3blocks/blocks
 command=$SCRIPT_DIR/$BLOCK_NAME
 separator_block_width=30
 markup=pango
+color=#999999
+background=#372846
 
-# Volume indicator
-#
-# The first parameter sets the step (and units to display)
-# The second parameter overrides the mixer selection
-# See the script for details.
+#[window]
+#command=xtitle -s
+#interval=persist
+#align=left
+
+[player]
+command=/home/muerwre/.config/i3blocks/blocks/player
+format=json
+interval=persist
+color=#777777
 
 [cpu]
 command=lscpu | grep 'CPU MHz' | sed 's/^CPU MHz\W*//; s/....$/ MHz/'
@@ -46,11 +53,11 @@ align=left
 command=/home/muerwre/.config/i3blocks/blocks/memory
 interval=20
 
-[wifi]
-command=/home/muerwre/.config/i3blocks/blocks/wifi
-label=  
-INTERFACE=wlo1
-interval=20
+#[wifi]
+#command=/home/muerwre/.config/i3blocks/blocks/wifi
+#label=  
+#INTERFACE=wlo1
+#interval=20
 
 [volume-pulseaudio]
 command=/home/muerwre/.config/i3blocks/blocks/volume
