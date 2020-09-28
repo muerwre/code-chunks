@@ -10,7 +10,7 @@ exec --no-startup-id xrandr --output HDMI1 --primary --mode 1920x1080 --pos 0x0 
 bindsym $mod+Tab exec "rofi -show combi run, window"
 
 # Font
-font pango:DejaVu Sans Mono for Powerline 12
+font pango:Cantarell SemiBold 12
 
 # Gaps
 smart_gaps on
@@ -32,7 +32,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10 # decrease
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+grave exec --no-startup-id i3-sensible-terminal
+bindsym $mod+grave exec --no-startup-id gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -155,10 +155,11 @@ for_window [floating] border normal 5
 assign [class="Google-chrome"] $ws1
 assign [class="Slack"] $ws3
 assign [class="code-oss"] $ws2
+assign [class="jetbrains-idea"] $ws2
 assign [class="TelegramDesktop"] $ws3
 
 # Startups
-exec --no-startup-id code
+exec --no-startup-id idea
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -241,8 +242,9 @@ bindsym $mod+Delete mode "$mode_system"
 # client.unfocused              #222222 #222222 #777777 #ff0000
 # client.focused_inactive       #444444 #444444 #222222 #ff0000
 # Red
-client.background       #ff0000 #ff0000 #ff0000
-client.focused            #a95566 #a95566 #ffffff #d9bb77 #a95566
+client.background         #ff0000 #ff0000 #ff0000
+client.focused            #44bb99 #44bb99 #333333 #d9bb77 #339977
+client.urgent             #553355 #662233 #ffffff #d9bb77 #339977
 client.unfocused          #222222 #222222 #999999 #444444 #222222
 client.focused_inactive   #444444 #444444 #999999 #444444 #222222
 
@@ -253,7 +255,7 @@ exec --no-startup-id telegram-desktop
 exec --no-startup-id slack
 exec --no-startup-id redshift-gtk
 exec --no-startup-id i3-msg 'workspace $ws1; exec --no-startup-id google-chrome-stable;'
-exec --no-startup-id i3-msg 'workspace $ws4; exec --no-startup-id urxvt;'
+exec --no-startup-id i3-msg 'workspace $ws4; exec --no-startup-id gnome-terminal;'
 
 bindsym --release Caps_Lock exec --no-startup-id pkill -RTMIN+8 i3blocks
 
@@ -296,3 +298,10 @@ exec_always --no-startup-id nitrogen --restore
 # Gestures
 exec --no-startup-id libinput-gestures-setup autostart
 exec --no-startup-id libinput-gestures-setup start
+
+for_window [class=".*"] title_format "    %title"
+
+focus_follows_mouse no
+workspace_auto_back_and_forth yes
+force_display_urgency_hint 100 ms
+show_marks yes
